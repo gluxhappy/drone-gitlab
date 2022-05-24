@@ -1,0 +1,13 @@
+diff --git a/scm/transport/oauth2/refresh.go b/scm/transport/oauth2/refresh.go
+index adc698c..bc4756d 100644
+--- a/scm/transport/oauth2/refresh.go
++++ b/scm/transport/oauth2/refresh.go
+@@ -57,6 +57,8 @@ func (t *Refresher) Refresh(token *scm.Token) error {
+ 	values := url.Values{}
+ 	values.Set("grant_type", "refresh_token")
+ 	values.Set("refresh_token", token.Refresh)
++	values.Set("client_id", t.ClientID)
++	values.Set("client_secret", t.ClientSecret)
+ 
+ 	reader := strings.NewReader(
+ 		values.Encode(),
