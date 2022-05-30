@@ -1,2 +1,4 @@
 drone/
 go-scm/
+ecr.sh
+patch.sh
